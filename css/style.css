@@ -1,0 +1,21 @@
+﻿header {padding: 20px 60px; background: #d4d4d4; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 3px 3px 1px #00000021;}
+
+a, a:hover {text-decoration: none;}
+h2 {}
+
+.logo {color: #071229; transition: 300ms; font-weight: 700; display: block;}
+.logo:hover {color: #127b28;}
+header .btn {width: 15%;}
+
+main {padding: 20px 60px; background: rgba(246, 251, 237, 0.37);}
+
+.sorting {display: flex; width: 70%; align-items: center; margin-left: auto;}
+.sorting span {margin-right: 15px;}
+
+table {width: 100%; margin-top: 30px;}
+thead {background: #071d0e; color: #cdcdcd;}
+th, td {padding: 10px;}
+th:first-child, td:first-child {text-align: center;}
+
+.add-task {margin-top: 50px;}
+.add-task input {width: 100%;}

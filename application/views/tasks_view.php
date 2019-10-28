@@ -44,13 +44,9 @@
 <ul class="pagination">
 	<li class="page-item"><a class="page-link" href="#">Previous</a></li>
 	<?php
-	for ($i = 0; $i <= $paginationCount; ++$i){  echo $paginationCount; ?>
-		<li class="page-item"><a class="page-link" href="http://taskmvs/tasks/show/?page=1">1</a></li>
+	for ($i = 1; $i <= $data['paginationCount']; $i++){  ?>
+		<li class="page-item"><a class="page-link" href="/?page="><?= $i;?></a></li>
 	<?php } ?>
-
-
-
-
 	<!--<li class="page-item"><a class="page-link" href="http://taskmvs/tasks/show/?page=2">2</a></li>
 	<li class="page-item"><a class="page-link" href="#">3</a></li>-->
 	<li class="page-item"><a class="page-link" href="#">Next</a></li>

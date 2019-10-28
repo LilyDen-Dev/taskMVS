@@ -5,10 +5,22 @@ class Controller_Main extends Controller
 
 	function action_index()
 	{
-		$data = [
+		$page = 0;
+		if(isset($_GET['page'])){
+			$page = $_GET['page'] * 3;
+		}
 
-			'tasks'=> []
+		$this->load_model('tasks');
+		$db = new Model_Tasks();
+		$res_tasks = $db->get_tasks($page);
+
+		$paginationCount = $db->count_tasks($page) / 3;
+
+		$data = [
+			'tasks'=> $res_tasks,
+			'pages' => $page,
+			'paginationCount' => $paginationCount,
 		];
-		$this->view->generate('main_view.php', 'template_view.php', $data);
+		$this->view->generate('tasks_view.php', 'template_view.php', $data);
 	}
 }

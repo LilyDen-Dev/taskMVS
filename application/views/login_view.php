@@ -1,5 +1,5 @@
 
-<form class="needs-validation" novalidate action="" method="post">
+<form class="needs-validation" novalidate action="/user/login" method="post">
 	<div class="form-row">
 		<div class="coll-md-4 mt-3">
 			<label for="validationTooltip01">Логин</label>

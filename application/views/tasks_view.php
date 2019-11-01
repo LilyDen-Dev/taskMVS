@@ -54,17 +54,17 @@
 </table>
 
 <ul class="pagination">
-	<li class="page-item"><a class="page-link" href="/main/index/?page=<?= $data['previous'] ;?>">Previous</a></li>
+<!--	<li class="page-item"><a class="page-link" href="/main/index/?page=--><?//= $data['previous'] ;?><!--">Previous</a></li>-->
 	<?php
 	for ($data['page'] = 0; $data['page'] < $data['paginationCount']; $data['page']++){ ?>
 		<li class="page-item <?php if(($_GET['page']) == $data['page']) { ?>  active <?php } ?>"><a class="page-link" href="/main/index/?page=<?= $data['page'];?>"><?= $data['page'] + 1;?></a></li>
 	<?php } ?>
-	<li class="page-item"><a class="page-link" href="/main/index/?page=<?= $data['next'] ;?>">Next</a></li>
+<!--	<li class="page-item"><a class="page-link" href="/main/index/?page=--><?//= $data['next'] ;?><!--">Next</a></li>-->
 </ul>
 
 <div class="add-task">
 	<h2>Добавить задачу</h2>
-	<form class="needs-validation" novalidate action="/tasks/add" method="post" id="task_form">
+	<div class="needs-validation js-form" id="task_form">
 		<div class="form-row">
 			<div class="coll-md-4 mt-3">
 				<label for="validationTooltip01">Имя</label>
@@ -76,7 +76,7 @@
 			<div class="coll-md-4 mt-3">
 				<label for="validationTooltipUsername">email</label>
 				<input class="form-control" id="validationTooltipUsername" type="text" name="email" required>
-				<div class="invalid-tooltip validate">Укажите Email</div>
+				<div class="invalid-tooltip validate js-err-email">Укажите Email</div>
 			</div>
 		</div>
 		<div class="coll-md-4 mt-3">
@@ -84,6 +84,6 @@
 			<textarea class="form-control" id="validationTooltipTextarea" name="text" required></textarea>
 			<div class="invalid-tooltip validate">Запишите задачу</div>
 		</div>
-		<button class="btn btn-dark mt-3" type="submit">Добавить</button>
-	</form>
+		<button class="btn btn-dark mt-3" id="submit_form" type="submit">Добавить</button>
+	</div>
 </div>

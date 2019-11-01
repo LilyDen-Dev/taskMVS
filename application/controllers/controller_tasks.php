@@ -7,23 +7,30 @@ class Controller_Tasks extends Controller
 	{
 		$this->load_model('tasks');
 		$db = new Model_Tasks();
-
 		$error = false;
-		$task = '';
 
-		if (!empty($_POST['username']) && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) && !empty($_POST['text'])) {
-			$task = $db->add_tasks($_POST['username'], $_POST['email'], $_POST['text']);
+		$result = [];
+		$task = '';
+		$username = $_POST['username'];
+		$email = $_POST['email'];
+		$text = $_POST['text'];
+
+		if (!empty($username) && filter_var($email, FILTER_VALIDATE_EMAIL) && !empty($text)) {
+			$task = $db->add_tasks($username, $email, $text);
+			$result['status'] = "success";
 
 		}
 		else {
 			$error = true;
+			$result['status'] = "error";
 		}
+
 		if ($error) {
-			$task = "value is invalid";
+			$result['error'] = "email is not valid";
 		}
-
-
-		header('Location: /');
+		header('Content-type: application/json /');
+		echo json_encode($result);
+//		header('Location: /');
 	}
 
 	function action_edit()

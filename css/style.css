@@ -23,7 +23,7 @@ thead th.email {width: 10%;}
 thead th.task {width: 40%;}
 thead th.status {width: 10%;}
 thead th.redact {width: 10%;}
-.invalid-tooltip.validate {top: 10px; position: relative;}
+.invalid-tooltip.validate {top: 5px; position: relative;}
 
 .add-task {margin-top: 50px;}
 .add-task input {width: 100%;}
